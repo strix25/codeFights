@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//calculate century
+function centuryFromYear(year) {
+    let century = year/100
+    if(century % 1 != 0){
+        return parseInt(century)+1;
+    }else{
+        return century;
+    }
+}
+
+//reverse string
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+//check if word is palindrome
+function checkPalindrome(inputString) {
+    return inputString === reverseString(inputString);
+}
+
+//check for highest adjustment product
+function adjacentElementsProduct(inputArray) {
+    let largest = Number.MIN_SAFE_INTEGER;
+    for (let i= 0; i< inputArray.length; i++) {
+        let current = inputArray[i] * inputArray[i+1];
+        if(largest < current) {
+            largest = current;
+        }
+    }
+    return largest;
+}
+
+//shape and trim area - visualy
+function shapeArea(n) {
+   let krekVrejzemoOkrog = n * n;
+}
+
+//another palindrom
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+function palindrome(str) {
+    str =   str.replace(/[^a-zA-Z0-9]/g, ""); 
+    str = str.toLowerCase();
+    str=str.replace(/ /g, '');
+    console.log(str);
+    return str === reverseString(str);
+}
+
+//find longest word
+function findLongestWord(str) {
+    var arr =[];
+    arr = str.split();
+    
+    for(var i  = 0; i < arr.length-1; i++){
+      
+    }
+    
+    return str.length;
+  }
+  
+findLongestWord("The quick brown fox jumped over the lazy dog");
+
+//title case words
+function titleCase(str) {
+  arr = [];
+    str = str.toLowerCase();
+
+    arr = str.split(" ");
+
+    for (var index = 0; index < arr.length; index++) {
+        arr[index] = arr[index].charAt(0).toUpperCase() + arr[index].slice(1); 
+    }
+
+    str= arr.join(" ");
+    return str;
+}
+
+titleCase("I'm a little tea pot");
+
+//Return Largest Numbers in Arrays
+function largestOfFour(arr) {
+/*
+1. go trough all arrays
+2. for each array call function find largest
+3. compare all numbers in array and return the largest
+*/
+    array = [];
+    for (let i = 0; i < arr.length; i++) {  
+    array[i] = findLargest(arr[i]);
+    }
+    arr = array;
+     return arr;
+}
+
+function findLargest(arr){
+  let largestNum = arr[0];
+  for (var i = 0; i < arr.length-1; i++) {
+    largestNum =compareTwoNum(largestNum, arr[i+1]);
+  }
+  return largestNum;
+}
+
+function compareTwoNum(a,b){
+  if(a>b){
+    return a;
+  }
+    return b;
+}
+
+//confirm ending
+function confirmEnding(str, target) {
+    let drek = target.length;
+    let odst = str.length - drek;
+    let neka = str.substr(odst, str.length-1);
+
+    return neka === target;
+}
+
+//repeat string num times
+function repeatStringNumTimes(str, num) {
+    let potato = "";
+    if(num < 0){
+        return "";
+    }
+    for (let i = 0; i < num; i++) {
+        potato += str;
+    }
+    return potato;
+}
+
+//chunk array
+function chunkArrayInGroups(arr, size) {
+   var groupa = [];
+   while (arr.length > 0) {
+     groupa.push(arr.splice(0, size));
+   }
+   return groupa;
+}
+
+//truncate string
+function truncateString(str, num) {
+    let strLength = str.length;
+    if(num <3){
+        return str.slice(0, num) + "...";
+    }
+    else if(strLength>num){
+        return str.slice(0, num-3) + "..."; 
+    }
+    return str;
+
+}
+
+//splice array
+function slasher(arr, howMany) {
+  arr.splice(0,howMany);
+  return arr;
+}
+
+//mutations
+function mutation(arr) {
+    var pot = arr[1].toLowerCase();
+    var potato = arr[0].toLowerCase();
+    for (i=0;i<pot.length;i++) {
+      if (potato.indexOf(pot[i]) === -1){
+        return false;
+      }
+        
+    }
+    return true;
+}
+
+//bouncer
+function bouncer(arr){
+  arr=arr.filter(potato);
+  return arr ;
+}
+
+bouncer([7, "ate", "", false, 9 ]);
+
+function potato(obj) {
+    if(typeof(obj) ==="string" || obj!== undefined  && !isNaN(obj) && obj!== null && obj !== 0 && obj!== "" && obj !== false){
+      return obj;
+    }
+     
+}
+//destroyer
+function destroyer(arr) {
+    var args = Array.prototype.slice.call(arguments);
+    args.splice(0,1);
+    return arr.filter(function(element) {
+      return args.indexOf(element) === -1;
+    });
+  }
+
+//where do i belong
+function getIndexToIns(arr, num) {
+    arr = arr.sort(function(a, b) {
+            return a - b;
+            });
+
+    for (var i = 0; i < arr.length; i++) {
+        if(num<=arr[i]){
+            return i;
+        }
+        
+    }
+
+    return arr.length;
+}
+
+//decode
+function rot13(str) {
+    let output = '';
+
+    
+    for (let i = 0; i < str.length; i++) {
+
+        let c = str[i];
+
+        const code = str.charCodeAt(i);
+
+        if ((code >= 65) && (code <= 90)) 
+            c = String.fromCharCode(((code - 65 + 13) % 26) + 65);
+        
+        output += c;
+
+    }
+
+    return output;
+}
+
+//Diff two arrays
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  
+  for (let i = 0; i < arr1.length; i++) {
+      if(arr[i] )
+      
+  }
+
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+</script>
+</body>
+</html>
