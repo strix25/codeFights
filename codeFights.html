@@ -242,34 +242,42 @@ function rot13(str) {
 }
 
 //Diff two arrays
-// function diffArray(arr1, arr2) {
-//   var newArr = [];
+function diffArray(arr1, arr2) {
+    var newArr = [];
+    
+    function onlyInFirst(first, second) {
+      for (var i=0;i<first.length;i++) {
+        if (second.indexOf(first[i]) === -1) {
+          newArr.push(first[i]);
+        }
+      }
+    }
+    
+    onlyInFirst(arr1, arr2);
+    onlyInFirst(arr2, arr1);
+    
+    return newArr;
+  }
   
-//   for (let i = 0; i < arr1.length; i++) {
-//       for (let j = 0; j < arr2.length; j++) {
-//           let temp = 0;
-//           if(arr1[i] === arr2[j]){
-//               temp++;
-//               break;
-//           }
+//Converter to Roman numbers
+var convertToRoman = function(num) {
 
-//           if(j === arr2.length-1){
-//               newArr.push(arr[i]);
-//           }
-          
-//       }
-      
-//   }
+var decimalValue = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+var romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
 
-//   return newArr;
-// }
+var romanized = '';
 
-// diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+for (var index = 0; index < decimalValue.length; index++) {
+  while (decimalValue[index] <= num) {
+    romanized += romanNumeral[index];
+    num -= decimalValue[index];
+  }
+}
 
-const words = ["spray", "limit", "elite", "exuberant", "destruction", "present", "happy"];
+return romanized;
+}
 
-let longWords = words.filter(word => word === "spray");
-
+convertToRoman(36);
 
 </script>
 </body>
