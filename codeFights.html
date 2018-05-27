@@ -313,17 +313,10 @@ function myReplace(str, before, after) {
 
 //Missing letters
 function fearNotLetter(str) {
-    //check char number and compare it to char next to it
-    //if char is higher for +1 then all gucci
-    //if not return +1 char
     let missing;
 
     for (let i = 0; i < str.length-1; i++) {
         if (str.charCodeAt(i) !== (str.charCodeAt(i+1)-1)) {
-            // let en = str.charCodeAt(i)+1;
-            // let dv = str.charCodeAt(i+1);
-            // console.log(String.fromCharCode(en));
-            // console.log();
             return String.fromCharCode(str.charCodeAt(i)+1);
         }
         
