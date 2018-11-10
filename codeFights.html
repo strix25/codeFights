@@ -414,7 +414,19 @@ function matrixElementsSum(matrix) {
     return sum;
 }
 
+//delete twitter tweets - its the best to scroll down to the bottom of the page and 
+//then run these few lines in console
+var pot = document.getElementsByClassName("js-actionDelete");
+for(var i = 0; i < 100; i++){
+    pot[i].click();
+    var del = document.getElementsByClassName("delete-action"); del[0].click();
+}
 
+//post a tweet on twitter
+tweet[3].click();
+var tweetBox = document.getElementsByName("tweet")[1].firstChild;
+tweetBox.innerHTML = "test1";
+document.getElementsByClassName("button-text")[25].click();
 
 </script>
 </body>
