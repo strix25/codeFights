@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        body{
-            background-color: black;
-        }
-    </style>
 </head>
 <body>
 <script>
@@ -74,8 +69,6 @@ function findLongestWord(str) {
     
     return str.length;
   }
-  
-findLongestWord("The quick brown fox jumped over the lazy dog");
 
 //title case words
 function titleCase(str) {
@@ -91,8 +84,6 @@ function titleCase(str) {
     str= arr.join(" ");
     return str;
 }
-
-titleCase("I'm a little tea pot");
 
 //Return Largest Numbers in Arrays
 function largestOfFour(arr) {
@@ -200,6 +191,7 @@ function potato(obj) {
     }
      
 }
+
 //destroyer
 function destroyer(arr) {
     var args = Array.prototype.slice.call(arguments);
@@ -416,17 +408,46 @@ function matrixElementsSum(matrix) {
 
 //delete twitter tweets - its the best to scroll down to the bottom of the page and 
 //then run these few lines in console
-var pot = document.getElementsByClassName("js-actionDelete");
-for(var i = 0; i < 100; i++){
-    pot[i].click();
-    var del = document.getElementsByClassName("delete-action"); del[0].click();
+function deleteTweets(){
+  var pot = document.getElementsByClassName("js-actionDelete");
+  for(var i = 0; i < 100; i++){
+      pot[i].click();
+      var del = document.getElementsByClassName("delete-action"); del[0].click();
+  }
 }
 
 //post a tweet on twitter
-tweet[3].click();
-var tweetBox = document.getElementsByName("tweet")[1].firstChild;
-tweetBox.innerHTML = "test1";
-document.getElementsByClassName("button-text")[25].click();
+function postTweet(){
+  tweet[3].click();
+  var tweetBox = document.getElementsByName("tweet")[1].firstChild;
+  tweetBox.innerHTML = "test1";
+  document.getElementsByClassName("button-text")[25].click();
+}
+
+//sock merchant - hackerRank
+function findPairs(arr){
+    let totalPairs = 0;
+    for (let i = 0; i < arr.length; i++) {
+ 
+        for (let j = 1; j < arr.length; j++) {
+            if(arr[i] === arr[j] && arr[i] !== undefined && arr[j] !== undefined && i !== j){
+                arr.splice(i,1);
+                arr.splice(j-1,1);
+  
+                i = -1;
+                j = 0;
+                totalPairs = totalPairs+1;
+                break;
+            }
+        }
+    }
+
+    return totalPairs;
+}
+
+let arr = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42]
+// let arr = [42, 42];
+findPairs(arr);
 
 </script>
 </body>
